@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazirmainia</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif; 
+            background-color: #000000; 
+            color: #e4e6eb; 
+            margin: 0; 
+            overflow-x: hidden;
+        }
+
+        /* Top Navigation Bar */
+        nav { 
+            background-color: #1c1e21; 
+            height: 56px;
+            padding: 0 16px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid #3e4042;
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+        }
+        
+        .nav-left { display: flex; align-items: center; gap: 10px; }
+        .logo { color: #ff0000; font-size: 24px; font-weight: 800; text-decoration: none; }
+        .search-box { background: #3a3b3c; border: none; padding: 10px 15px; border-radius: 50px; color: white; width: 200px; }
+
+        /* Three Column Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr 280px;
+            gap: 32px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Sidebar Styles */
+        .sidebar { position: sticky; top: 76px; height: calc(100vh - 76px); }
+        .sidebar-item { 
+            display: flex; align-items: center; padding: 10px; border-radius: 8px; 
+            cursor: pointer; transition: 0.2s; text-decoration: none; color: white;
+        }
+        .sidebar-item:hover { background-color: #3a3b3c; }
+        .sidebar-icon { width: 36px; height: 36px; border-radius: 50%; margin-right: 12px; background: #3a3b3c; }
+
+        /* Feed Section */
+        .feed { max-width: 680px; margin: 0 auto; width: 100%; }
+
+        /* Create Post Card */
+        .card { 
+            background: #242526; border-radius: 8px; padding: 12px 16px; 
+            margin-bottom: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.2); 
+        }
+        .create-post-top { display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #3e4042; padding-bottom: 12px; }
+        .mind-input { 
+            background: #3a3b3c; border-radius: 20px; padding: 10px 15px; 
+            flex-grow: 1; cursor: pointer; color: #b0b3b8; 
+        }
+        .mind-input:hover { background: #4e4f50; }
+
+        .create-post-btns { display: flex; justify-content: space-around; padding-top: 10px; }
+        .post-btn { color: #b0b3b8; font-weight: 600; font-size: 14px; cursor: pointer; padding: 8px; border-radius: 4px; }
+        .post-btn:hover { background: #3a3b3c; }
+
+        /* Profile Card Sidebar */
+        .about-card { background: #242526; border-radius: 8px; padding: 16px; }
+        .about-card h3 { margin-top: 0; font-size: 20px; border-bottom: 1px solid #3e4042; padding-bottom: 10px; }
+        .detail { margin: 12px 0; font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+        .detail b { color: #ff0000; }
+
+        /* Post Content */
+        .post-header { display: flex; align-items: center; margin-bottom: 12px; }
+        .post-user { font-weight: 600; font-size: 15px; }
+        .post-user span { display: block; font-size: 12px; color: #b0b3b8; font-weight: 400; }
+        .post-text { font-size: 15px; line-height: 1.4; margin-bottom: 12px; }
+        
+        .avatar-sm { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid #ff0000; }
+
+        /* Responsive */
+        @media (max-width: 1100px) { .main-grid { grid-template-columns: 1fr; } .sidebar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <a href="#" class="logo">NAZIRMAINIA</a>
+            <input type="text" class="search-box" placeholder="Search Nazirmainia">
+        </div>
+        <div class="nav-right" style="display: flex; gap: 10px;">
+            <div class="post-btn" style="background: #3a3b3c; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;">+</div>
+            <div class="post-btn" style="background: #3a3b3c; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center;">🔔</div>
+        </div>
+    </nav>
+
+    <div class="main-grid">
+        <aside class="sidebar">
+            <a href="#" class="sidebar-item">
+                <img src="WhatsApp Image 2026-02-03 at 12.40.43 AM.jpeg" class="avatar-sm" style="border: none;">
+                <span style="font-weight: 600; margin-left: 10px;">Maksud Al Nazir</span>
+            </a>
+            <div class="sidebar-item"><div class="sidebar-icon"></div> Friends</div>
+            <div class="sidebar-item"><div class="sidebar-icon"></div> Groups</div>
+            <div class="sidebar-item"><div class="sidebar-icon"></div> Marketplace</div>
+            <div class="sidebar-item"><div class="sidebar-icon"></div> Memories</div>
+            <div class="sidebar-item"><div class="sidebar-icon"></div> Saved</div>
+        </aside>
+
+        <main class="feed">
+            <div class="card">
+                <div class="create-post-top">
+                    <img src="WhatsApp Image 2026-02-03 at 12.40.43 AM.jpeg" class="avatar-sm">
+                    <div class="mind-input">What's on your mind, Maksud?</div>
+                </div>
+                <div class="create-post-btns">
+                    <div class="post-btn">🎥 Live Video</div>
+                    <div class="post-btn">📸 Photo/video</div>
+                    <div class="post-btn">😊 Feeling/activity</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="post-header">
+                    <img src="WhatsApp Image 2026-02-03 at 12.40.43 AM.jpeg" class="avatar-sm">
+                    <div style="margin-left: 10px;">
+                        <div class="post-user">Maksud Al Nazir <span>Just now · Dhaka · 🌎</span></div>
+                    </div>
+                </div>
+                <div class="post-text">
+                    Welcome Home.
+                </div>
+                <div class="post-btns" style="display: flex; justify-content: space-around; border-top: 1px solid #3e4042; padding-top: 10px;">
+                    <div class="post-btn">👍 Like</div>
+                    <div class="post-btn">💬 Comment</div>
+                    <div class="post-btn">↪️ Share</div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="about-card">
+                <h3>Intro</h3>
+                <div class="detail"><b>Education</b> Eastern University, Bangladesh</div>
+                <div class="detail"><b>Location</b> From Tangail, Bangladesh</div>
+                <div class="detail"><b>Interests</b> Cricket, Pro Wrestling ,Football, Politics</div>
+                <button style="width: 100%; padding: 8px; background: #3a3b3c; border: none; color: white; border-radius: 6px; font-weight: 600; cursor: pointer; margin-top: 10px;">Edit Bio</button>
+            </div>
+            
+            <div style="margin-top: 20px; padding: 10px; color: #b0b3b8; font-size: 13px;">
+                Contacts (Club Members)
+                <div class="sidebar-item" style="padding: 5px 0;"><div class="sidebar-icon" style="width: 28px; height: 28px;"></div> Club Member 1</div>
+                <div class="sidebar-item" style="padding: 5px 0;"><div class="sidebar-icon" style="width: 28px; height: 28px;"></div> Club Member 2</div>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
